@@ -1,0 +1,356 @@
+.btn
+  background $primary
+  border 0
+  color #fff
+  cursor pointer
+  display inline-block
+  font-family $font
+  font-size 1.2rem
+  font-weight 700
+  flex-shrink 0
+  line-height 1
+  letter-spacing .8px
+  overflow hidden
+  max-height 5.2rem
+  padding 1.9rem 3.4rem
+  position relative
+  text-transform uppercase
+  text-decoration none
+  transition all .4s
+  z-index 10
+  &:after
+    // background-color $primary - 10%
+    background $primary - 10%
+    content ''
+    right 0
+    height 100%
+    position absolute
+    top 0
+    transition all .2s ease
+    width 0
+    z-index -1
+  &:hover
+    &:after
+      left 0
+      width 100%
+  &--small
+    font-size 1.4rem
+    font-weight 500
+    padding 1.4rem 1.6rem
+  &--micro
+    font-size 1.3rem
+    font-weight 400
+    padding 1rem 1.2rem
+  &--full-size
+    padding 2.2rem 3rem
+    text-align center
+    width 100%
+  &--secondary
+    background-color #eaeaea
+    color $main
+    &:hover
+      background-color #eaeaea - 10%
+      color $main
+  &--green
+    background-color $green
+    &:hover
+      background-color $green - 15%
+  & + .btn
+    margin-left 2rem
+
+.btn-link-container
+  display flex
+  justify-content center
+
+.btn-link
+  align-items center
+  cursor pointer
+  display inline-flex
+  flex-shrink 0
+  flex-grow 0
+  &__icon
+    align-items center
+    border 2px solid $primary
+    border-radius 50%
+    circle(8rem)
+    display inline-flex
+    justify-content center
+    margin-right 1.6rem
+    transition all .3s ease
+    svg
+      fill $primary
+      transform all .3s ease
+  &__text
+    display inline-block
+    font-family $font-secondary
+    font-size 3.2rem
+    font-weight 600
+    transform translateY(2px)
+  &:hover
+    .btn-link
+      &__icon
+        background-color $primary
+        circle(6.4rem)
+    .svg
+      fill #fff
+      transform scale(.8)
+
+
+.flatpickr
+  &-month
+    margin-bottom 1rem
+  &-calendar
+    padding 1.5rem 0
+    &.arrowTop,
+    &.arrowBottom
+      &:before,
+      &:after
+        display none !important
+
+// .form-control
+//   border-bottom 2px solid rgba($primary, .2)
+//   // min-height 5rem
+//   margin-bottom 2.4rem
+//   position relative
+//   label
+//     color $gray
+//     cursor text
+//     left 0
+//     position absolute
+//     pointer-events none
+//     top 2rem
+//     transition all .2s
+//     max-width 100%
+//     &.form-control__label--active
+//       color $main
+//       font-size 1.2rem
+//       top 0
+//   input[type="text"],
+//   input[type="password"],
+//   input[type="date"],
+//   input[type="email"],
+//   input[type="tel"],
+//   input[type="number"],
+//   select,
+//   textarea,
+//   .select2-selection--single,
+//   .select2-selection--multiple
+//   .select2-container--focus
+//     background #fff
+//     border 0 !important
+//     border-radius 4px
+//     display block
+//     font-family $font
+//     font-size 1.6rem
+//     transition border-color .2s
+//     padding 1.4rem 0
+//     position relative
+//     resize vertical
+//     width 100%
+//     -webkit-appearance none
+//     &:focus
+//       & + label
+//         font-size 1.2rem
+//         top 0
+//   textarea
+//     height 100%
+//     min-height 12rem
+//   .select2-container--open + .form-control__icon
+//       transform rotate(180deg)
+//   &--error
+//     input[type="text"],
+//     input[type="password"],
+//     input[type="date"],
+//     input[type="email"],
+//     input[type="tel"],
+//     input[type="number"],
+//     select,
+//     textarea,
+//     .select2-selection--single
+//       border-color $error
+//     label
+//       color $error
+//     .form-control__icon
+//       color $error
+
+
+.select2
+  &-container--default
+    .select2-selection__arrow b
+      display none
+  &-dropdown
+    border $border
+    width 100%
+  &-selection
+    &--single
+      height initial !important
+    &__rendered
+      line-height 1.2 !important
+      padding-left 0 !important
+    &__choice
+      background-color rgba($primary, .1) !important
+      border 0 !important
+      font-size 1.4rem !important
+      margin 0 !important
+      margin-right .8rem !important
+      padding .4rem .8rem !important
+      &__remove
+        font-weight 300 !important
+  &-results__option
+    padding 1.2rem
+    padding-left 2rem
+  &-container--open .select2-dropdown--below
+    box-shadow 0 16px 24px 0 rgba(135, 149, 163, .1)
+  &-dropdown.select2-dropdown--below 
+    animation fadeUp .3s forwards
+
+
+// dropdown element hover
+.select2-container--default .select2-results__option--highlighted[aria-selected]
+  background-color $primary
+
+.checkbox
+  cursor pointer
+  display block
+  // margin-bottom 1rem
+  user-select none
+  &__label
+    background transparent
+    border-radius $radius
+    border $border
+    cursor pointer
+    circle(1.8rem)
+    display inline-block
+    margin-right 1rem
+    position relative
+    vertical-align middle
+    z-index 1
+    &:after
+      color $main
+      content "\f00c"
+      display none
+      font-family 'FontAwesome'
+      font-size 1.3rem
+      left 2px
+      position absolute
+      top 1px
+      z-index 10
+  input
+    display none
+  input:checked + .checkbox__label
+    // border-color $primary
+    &:after
+      display block
+  label
+    color $main
+    display inline-block
+    cursor pointer
+    vertical-align middle
+  a
+    border-bottom 1px dotted #bbb
+
+.radio
+  cursor pointer
+  display block
+  margin-bottom 1rem
+  user-select none
+  &__label
+    background transparent
+    border-radius 50%
+    border 1px solid $light-gray - 10%
+    cursor pointer
+    circle(2.4rem)
+    display inline-block
+    margin-right 1rem
+    position relative
+    vertical-align middle
+    z-index 1
+    &:after
+      background-color $primary
+      border-radius 50%
+      circle(1.4rem)
+      color #fff
+      content ''
+      display none
+      font-size 1.5rem
+      left 4px
+      position absolute
+      top 4px
+      z-index 10
+  input
+    display none
+  input:checked + .radio__label
+    background-color #fff
+    border-color $primary
+    box-shadow 0 0 0 1px $primary
+    &:after
+      display block
+  label
+    color $main
+    display inline-block
+    cursor pointer
+    vertical-align middle
+
+.file-upload
+  display block
+  margin-bottom .8rem
+  margin-top .8rem
+  input
+    display none
+    
+.tabs
+  &__header
+    border-bottom $border
+    display flex
+    justify-content space-between
+    margin 0 -3.2rem
+    margin-bottom 2.4rem
+    padding 0 3.2rem
+    padding-right 8rem
+  &__link
+    align-items center
+    color $dark-gray
+    cursor pointer
+    display flex
+    font-size 1.4rem
+    padding 2rem 0
+    &:not(.tabs__link--active):hover
+      color $primary
+    &--active
+      color $main
+      font-weight 500
+      padding-left 2rem
+      padding-right 2rem
+      position relative
+      &:after
+        background-color $primary
+        bottom 0
+        content ''
+        height 2px
+        left 0
+        position absolute
+        width 100%
+  &__icon
+    circle(1.2rem)
+    fill $green
+    margin-right .8rem
+    &--red
+      fill $red
+  &__content
+    display none
+    &--active
+      display block
+
+
+@media(max-width 767px)
+  .tabs
+    &__header
+      margin 1.6rem -1.6rem
+      padding 0
+    &__link
+      font-size 1.2rem
+      padding 1.6rem .8rem
+    &__icon
+      circle(.8rem)
+      margin-right .4rem
+      transform translateY(-2px)

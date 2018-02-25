@@ -1,0 +1,32 @@
+.hero
+  align-items center
+  // background url('../../img/hero.jpg') #000 top center
+  background #000
+  background-size cover
+  display flex
+  height 100vh
+  &__img
+    background url('../../img/hero.jpg') #000 top center
+    background-size cover
+    height 100%
+    opacity 0
+    position absolute
+    width 100%
+    z-index 0
+  &__container
+    max-width 52rem
+    .btn
+      opacity 0
+      transform translateY(2.4rem)
+  &__title
+    color #fff
+    font-family $font-secondary
+    font-weight 600
+    font-size 8rem
+    margin-bottom 3.2rem
+    &-overflow
+      display inline-block
+      overflow hidden
+      span
+        display inline-block
+        transform translateY(100%)
